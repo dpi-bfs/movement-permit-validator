@@ -1,0 +1,55 @@
+/*
+  See: John Bentley's \Documents\Sda\Info\OneBlink\OneBlinkNotes.md, CSS development ....
+
+    * Open a form in firefox.
+    * Install the firefox add-in [Save Page WE by WE-dev](https://addons.mozilla.org/en-US/firefox/addon/save-page-we/)
+    * Right click on form > Save Page WE > Save Selected Tabs > Basic Items
+    * Save as "index.html". 
+    * Open index.html in your editor and search for 
+
+          <script data-savepage-type="text/javascript" type="text/plain" data-savepage-src="https://api.quickstream.support.qvalent.com/rest/v1/quickstream-api-1.0.min.js">
+
+    * Above that, but before `</style>`, should be the OneBlink Wrapper CSS.Insert a inline stylesheet reference:
+        
+        <link rel="stylesheet" href="infoElementTables.css" />
+
+    * In Visual Studio Code > Right Click on index.html > Open With Live Server (the extension must be installed)
+    * Do your development in infoElementTables.css
+*/
+
+
+[class~="ob-information__content"] table thead {
+  font-weight: bold;
+}
+
+/* CSS Grid for Tables on narrow screen (i.e. mobile phone)*/
+@media screen and (max-width: 575px) {
+
+  [class~="ob-information__content"] table {
+    width: 100%;
+ }
+ 
+ [class~="ob-information__content"] table tr {
+     /* 01. In HTML our tr's are the grid container and the child th's/td's are the grid items   */
+ 
+     /* 02. Declare a container has having grid display */
+     display: grid;
+ 
+     /* 03. Define the grid areas and their sizing */
+     grid-template-columns: 1fr;
+ 
+     /* 04. Use break-word (not break-all) to ensure shrunk areas don't overflow */
+     word-break: break-word;
+ 
+     /* Aesthetic sugar */
+     /* border-bottom: 1px solid black;  */
+     margin-bottom: 1em;
+  }
+}
+
+/* Wider screens don't use CSS Grid */
+@media screen and (min-width: 575px) {
+  [class~="ob-information__content"] table th, [class~="ob-information__content"] table td {
+    padding: 0.25em 0.75em 0.25em 0;
+  }
+}
