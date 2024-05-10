@@ -1,6 +1,6 @@
 import { OneBlinkAPIHostingRequest } from '@oneblink/cli'
 import Boom from '@hapi/boom'
-import * as Globals from './globals.js'
+// import * as Globals from './globals.js'
 import * as HttpWrapper from './lib/httpWrapper.js'
 import * as PermitTypes from './permitTypes.mjs'
 import * as FormLookupReturnPacket from './formLookupReturnPacket.js'
@@ -57,18 +57,23 @@ export async function post(
       // As this gets inserted into a <p>, use:
       // <br /><br /> if you want paragraphs; and
       // <br /> if you want an end of line
+      
       // const invalidMessage = 
       // `Invalid Property Identification Code (PIC). Was not found in the National Livestock Identification System (NLIS) PIC Register.`
       const invalidMessage = "404 error"
       throw Boom.badRequest(invalidMessage)
 
-    } else if (e.message.startsWith(Globals.ErrorPrefix)) {
-      throw Boom.badRequest(e.message)
+    } else if (e.message.includes("The server did not receive a response from an upstream server")) {
+      throw Boom.badRequest(`The movement permit code (PermitSubmissionID), ${PermitSubmissionId}, could not be found in the database.`)
 
+
+    } else {
+      throw Boom.badImplementation('uncaught error');
+      console.error(e);
     }
 
-    console.error(e)
-    throw Boom.badImplementation('uncaught error')
+    
+    
   }
  
 }
