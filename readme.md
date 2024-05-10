@@ -86,7 +86,7 @@ Withdrawn SubmissionId: 4fb7f766-5787-465e-890b-f2287b19da59
 
 * Update library code in the /Typescript/library/, not MovementPermitValidator
 
-### Working with Typescript/BfsLibrary
+### Working with Typescript/BfsLibrary as Git submodule
 
 Typescript/BfsLibrary has been added as a Git submodule to MovementPermitValidation.
 
