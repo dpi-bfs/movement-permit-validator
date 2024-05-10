@@ -1,1 +1,0 @@
-export const ErrorPrefix = "Movement Permit Validation Prefix" 
