@@ -36,7 +36,7 @@ Withdrawn SubmissionId: 4fb7f766-5787-465e-890b-f2287b19da59
 
 * In Visual Studio Code ensure you add the following folder to your workspace ...
 
-    ...Code\Typescript\library
+    ...Code\Typescript\BfsLibrary
 
     The package.json is setup to watch changes in that folder and copy files across
 
