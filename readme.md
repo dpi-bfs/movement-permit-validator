@@ -60,6 +60,45 @@ Withdrawn SubmissionId: 4fb7f766-5787-465e-890b-f2287b19da59
     - [Send]
     - Observe data that the API returns to the OneBlink Form.
 
+### (Deprecated) Working with Typescript/library (now "Typescript/BfsLibrary")
+
+* In MovementPermitValidator we have package.json
+
+    "config": {
+      "externalLibraryPath": "../../../Typescript/library/",
+      "externalLibraryFileList": " dateTime.* httpWrapper.* http.*"
+    },
+    "scripts": {
+      "print": "echo %npm_package_config_externalLibraryPath%",
+      "watch-typescript": "npx tsc --watch",
+      "mirror-library-files": "robocopy %npm_package_config_externalLibraryPath% src/lib %npm_package_config_externalLibraryFileList% /MIR /lev:1",
+      "watch-library-files": "chokidar %npm_package_config_externalLibraryPath%*.{ts,mts} -c \"npm run mirror-library-files\" --initial",
+      "clean": "rimraf out src/lib",
+      "watch": "npm-run-all clean --parallel watch-library-files watch-typescript",
+      "start": "node ./out/index.js"
+    },
+
+* Open a terminal instance in MovementPermitValidation root; then   
+    npm run watch
+
+* Open a terminal instance in Library root; then   
+    npm run watch
+
+* Update library code in the /Typescript/library/, not MovementPermitValidator
+
+### Working with Typescript/BfsLibrary
+
+Typescript/BfsLibrary has been added as a Git submodule to MovementPermitValidation.
+
+* At Typescript/BfsLibrary:
+  - Work on code.
+  - In your Git client for Typescript/BfsLibrary make a commit
+
+* MovementPermitValidator SmartGit. 
+  - MovementPermitValidator/src/BfsLibrary > Right Click > [Pull ...] > [Pull]
+  - MovementPermitValidator/ observe that among the changes is "BfsLibrary" Modified
+  - [Commit]
+
 ### Developer Key/Deployment Keys
 
 We use the "Movement Permit Validation" developer key. Privileges for "Forms" and "APIs" (deployment keys). OneBlink Console > Developer Tools > Developer Keys > "Movement Permit Validation"

@@ -71,9 +71,5 @@ export async function post(
       throw Boom.badImplementation('uncaught error');
       console.error(e);
     }
-
-    
-    
   }
- 
 }
