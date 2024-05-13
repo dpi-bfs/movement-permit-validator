@@ -76,14 +76,6 @@ export function getPacket(permitCaseDetail: PermitTypes.PermitCaseDetail, status
             <td>${permitCaseDetail.Instrument}</td>
           </tr>
           <tr>
-            <th>Applicant requested start date:</th>
-            <td>${LibDateTime.getDatePartAsIfLocal(permitCaseDetail.RequestedStartDate)}</td>
-          </tr>
-          <tr>
-            <th>Applicant requested end date:</th>
-            <td>${LibDateTime.getDatePartAsIfLocal(permitCaseDetail.RequestedEndDate)}</td>
-          </tr>
-          <tr>
             <th>Approved start date:</th>
             <td>todo</td>
           </tr>
