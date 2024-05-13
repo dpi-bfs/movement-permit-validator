@@ -63,7 +63,7 @@ export async function post(
       const invalidMessage = "404 error"
       throw Boom.badRequest(invalidMessage)
 
-    } else if (e.message.includes("The server did not receive a response from an upstream server")) {
+    } else if (e.output.statusCode === 502 && e.message.includes("The server did not receive a response from an upstream server")) {
       throw Boom.badRequest(`The movement permit code (PermitSubmissionID), ${PermitSubmissionId}, could not be found in the database.`)
 
 
