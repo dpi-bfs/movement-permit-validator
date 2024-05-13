@@ -86,18 +86,38 @@ Withdrawn SubmissionId: 4fb7f766-5787-465e-890b-f2287b19da59
 
 * Update library code in the /Typescript/library/, not MovementPermitValidator
 
-### Working with Typescript/BfsLibrary as Git submodule
+### (Recommended) Working with Typescript/BfsLibrary as Git submodule
 
 Typescript/BfsLibrary has been added as a Git submodule to MovementPermitValidation.
 
-* At Typescript/BfsLibrary:
-  - Work on code.
-  - In your Git client for Typescript/BfsLibrary make a commit
+Use Git submodules to import a local library into your project app (Master procedure: John\Documents\Sda\Info\Git\KB\Reference\GitAndGithubReference.md).
 
-* MovementPermitValidator SmartGit. 
-  - MovementPermitValidator/src/BfsLibrary > Right Click > [Pull ...] > [Pull]
-  - MovementPermitValidator/ observe that among the changes is "BfsLibrary" Modified
-  - [Commit]
+#### Setup 
+
+* Create/add your local library as a Git Repo.
+* From your project app add the local library as a Git submodule. SmartGit  
+  - SmartGit Repositories > [My Project] (Already open) > /src [click]
+  - SmartGit Menu Remote > Submodule > Add ...
+
+### Workflow
+
+* Ensure you now have two instances of SmartGit open. For your project and the local library.  
+* Local library:
+  - Work on code.
+  - Commit locally
+* Project. Pull local library changes into Project.
+  - > Repositories > [My Project] > src > [My Git Submodule] (E.g. BfsLibrary) > Right click > [Pull ...]
+  - > Repositories > [My Project] Click
+    + Observe your Submodule will be marked as modified; and your project library will have been updated.
+    + Commit the change 
+  - Ensure your project references the library as a subfolder in your project. E.g.
+    
+        import * as HttpWrapper from './BfsLibrary/httpWrapper.js'
+    
+    ... rather than, say, as a symbolic link  `npm link @dpibfs/httpWrapper` (using, from your library, `npm link`)
+
+        import * as HttpWrapper from '@dpibfs/httpWrapper'
+
 
 ### Developer Key/Deployment Keys
 
