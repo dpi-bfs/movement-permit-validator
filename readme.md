@@ -153,6 +153,10 @@ See "Use deployment keys" John Bentley's Sda\Info\OneBlink\OneBlink-ApiNotes.md
       $ENV:ONEBLINK_ACCESS_KEY="TheKeyId"
       $ENV:ONEBLINK_SECRET_KEY="TheKeySecret"      
 
+* Update code.
+
+* Update API_CODE_VERSION in .blinkmrc.json
+
 * In another terminal process Deploy
 
       npx oneblink api deploy --env dev;Get-Date

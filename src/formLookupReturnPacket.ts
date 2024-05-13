@@ -136,6 +136,7 @@ export function getPacket(permitCaseDetail: PermitTypes.PermitCaseDetail, status
     "ApprovedStatusText": approvedStatusText,
     "NotApprovedStatusText": notApprovedStatusText,
     "ApplicationDetailsText": applicationDetailsText,
-    "ApplicationStatusHistory": applicationStatusHistoryText
+    "ApplicationStatusHistory": applicationStatusHistoryText,
+    "ApiCodeVersionText": process.env.API_CODE_VERSION
   }
 }
