@@ -1,5 +1,5 @@
 {
-  "name": "movement-permit-validation",
+  "name": "movement-permit-validator",
   "version": "1.0.0",
   "description": "This validates a movement permit with respect to any pest or disease requiring a movement permit. Given a submissionId, this is passed on to a Power Automate flow - BfsPermitsApi - that returns data from the Max NSW Permits database as a JSON Packet. This code processes that JSON Packet into a format for consumption by the OneBlink form",
   "main": "out/index.js",
