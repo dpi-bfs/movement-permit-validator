@@ -101,7 +101,7 @@ Use Git submodules to import a local library into your project app (Master proce
   - SmartGit Repositories > [My Project] (Already open) > /src [click]
   - SmartGit Menu Remote > Submodule > Add ...
 
-### Workflow
+#### Workflow
 
 * Ensure you now have two instances of SmartGit open. For your project and the local library.  
 * Local library:
