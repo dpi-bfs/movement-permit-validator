@@ -29,7 +29,7 @@ Body:
         "SubmissionId": "4acd559a-6940-43f9-b427-1c8c6df95306"
     }
 
-Approved  SubmissionId: 4acd559a-6940-43f9-b427-1c8c6df95306
+Approved  SubmissionId: 4acd559a-6940-43f9-b427-1c8c6df95306  
 Withdrawn SubmissionId: 4fb7f766-5787-465e-890b-f2287b19da59
 
 #### OneBlink API local testing
@@ -42,7 +42,7 @@ Withdrawn SubmissionId: 4fb7f766-5787-465e-890b-f2287b19da59
 
 * Start the API, serving it locally
 
-    npx oneblink api serve
+      npx oneblink api serve
 
 * In Postman POST some data:
 
@@ -64,25 +64,27 @@ Withdrawn SubmissionId: 4fb7f766-5787-465e-890b-f2287b19da59
 
 * In MovementPermitValidator we have package.json
 
-    "config": {
-      "externalLibraryPath": "../../../Typescript/library/",
-      "externalLibraryFileList": " dateTime.* httpWrapper.* http.*"
-    },
-    "scripts": {
-      "print": "echo %npm_package_config_externalLibraryPath%",
-      "watch-typescript": "npx tsc --watch",
-      "mirror-library-files": "robocopy %npm_package_config_externalLibraryPath% src/lib %npm_package_config_externalLibraryFileList% /MIR /lev:1",
-      "watch-library-files": "chokidar %npm_package_config_externalLibraryPath%*.{ts,mts} -c \"npm run mirror-library-files\" --initial",
-      "clean": "rimraf out src/lib",
-      "watch": "npm-run-all clean --parallel watch-library-files watch-typescript",
-      "start": "node ./out/index.js"
-    },
+      "config": {
+        "externalLibraryPath": "../../../Typescript/library/",
+        "externalLibraryFileList": " dateTime.* httpWrapper.* http.*"
+      },
+      "scripts": {
+        "print": "echo %npm_package_config_externalLibraryPath%",
+        "watch-typescript": "npx tsc --watch",
+        "mirror-library-files": "robocopy %npm_package_config_externalLibraryPath% src/lib %npm_package_config_externalLibraryFileList% /MIR /lev:1",
+        "watch-library-files": "chokidar %npm_package_config_externalLibraryPath%*.{ts,mts} -c \"npm run mirror-library-files\" --initial",
+        "clean": "rimraf out src/lib",
+        "watch": "npm-run-all clean --parallel watch-library-files watch-typescript",
+        "start": "node ./out/index.js"
+      },
 
 * Open a terminal instance in MovementPermitValidation root; then   
-    npm run watch
+    
+      npm run watch
 
 * Open a terminal instance in Library root; then   
-    npm run watch
+    
+      npm run watch
 
 * Update library code in the /Typescript/library/, not MovementPermitValidator
 
@@ -106,8 +108,8 @@ Use Git submodules to import a local library into your project app (Master proce
   - Work on code.
   - Commit locally
 * Project. Pull local library changes into Project.
-  - > Repositories > [My Project] > src > [My Git Submodule] (E.g. BfsLibrary) > Right click > [Pull ...]
-  - > Repositories > [My Project] Click
+  - Repositories > [My Project] > src > [My Git Submodule] (E.g. BfsLibrary) > Right click > [Pull ...]
+  - Repositories > [My Project] Click
     + Observe your Submodule will be marked as modified; and your project library will have been updated.
     + Commit the change 
   - Ensure your project references the library as a subfolder in your project. E.g.
@@ -127,8 +129,8 @@ We use the "Movement Permit Validation" developer key. Privileges for "Forms" an
 
 Set from a Windows Terminal running powershell like this ...
 
-$ENV:ONEBLINK_ACCESS_KEY="TheKeyId"
-$ENV:ONEBLINK_SECRET_KEY="TheKeySecret"
+    $ENV:ONEBLINK_ACCESS_KEY="TheKeyId"
+    $ENV:ONEBLINK_SECRET_KEY="TheKeySecret"
 
 See "Use deployment keys" John Bentley's Sda\Info\OneBlink\OneBlink-ApiNotes.md
 
@@ -155,7 +157,7 @@ See "Use deployment keys" John Bentley's Sda\Info\OneBlink\OneBlink-ApiNotes.md
 
 * Update code.
 
-* Update API_CODE_VERSION in .blinkmrc.json
+* Update `API_CODE_VERSION` in .blinkmrc.json
 
 * In another terminal process Deploy
 
