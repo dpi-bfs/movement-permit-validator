@@ -68,7 +68,7 @@ export function getPacket(permitCaseDetail: PermitTypes.PermitCaseDetail, status
       `<table>
         <tbody>
           <tr>
-            <th>Latest application statuszzz:</th>
+            <th>Latest application status YYY:</th>
             <td>${latestApplicationStatusText}</td>
           </tr>
           <tr>

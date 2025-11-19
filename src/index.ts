@@ -13,6 +13,7 @@ export async function post(
   }>,
 ) {
 
+  console.log("hello world");
   const triggerElementName = request.body.element.name;
   console.log("triggerElementName", triggerElementName);
   
@@ -68,8 +69,8 @@ export async function post(
 
 
     } else {
-      throw Boom.badImplementation('uncaught error');
       console.error(e);
+      throw Boom.badImplementation('uncaught error');
     }
   }
 }
