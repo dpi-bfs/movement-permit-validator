@@ -1,6 +1,6 @@
 import * as PermitTypes from './permitTypes.mjs'
-import { DatabaseResponse } from './BfsLibrary/httpWrapper.js'
-import * as LibDateTime from './BfsLibrary/dateTime.mjs'
+import { DatabaseResponse } from './BfsLibraryOld/httpWrapper.js'
+import * as LibDateTime from './BfsLibraryOld/dateTime.mjs'
 
 /* 
 Returning a well formed object, without error codes, is enough for the OneBlink UI's Data lookup element
