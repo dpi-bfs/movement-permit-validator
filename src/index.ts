@@ -61,7 +61,7 @@ export async function post(
       
       // const invalidMessage = 
       // `Invalid Property Identification Code (PIC). Was not found in the National Livestock Identification System (NLIS) PIC Register.`
-      const invalidMessage = "404 error"
+      const invalidMessage = `The movement permit code (PermitSubmissionID), ${PermitSubmissionId}, could not be found in the database.`
       throw Boom.badRequest(invalidMessage)
 
     } else if (e.output.statusCode === 502 && e.message.includes("The server did not receive a response from an upstream server")) {
